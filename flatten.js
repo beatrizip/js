@@ -6,22 +6,11 @@
 
 function fn(obj) {
   let result = {};
-  let count = 0;
 
   for (const i in obj) {
     if (typeof obj[i] === "object") {
       let auxObj = fn(obj[i]);
-      let auxValue = "";
-
-      for (j in auxObj) {
-        if (typeof i === "array") {
-          auxValue = count;
-          count++;
-        } else {
-          auxValue = i;
-        }
-
-        result[`${auxValue}.${j}`] = auxObj[j];
+        result[`${i}.${j}`] = auxObj[j];
       }
     } else {
       result[i] = obj[i]; //nivel mas profundo de anidacion
