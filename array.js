@@ -84,32 +84,4 @@ class maxSequence {
   }
 }
 
-//---------------------------
-
-var arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-var ej = new maxSequence(arr);
-
-console.log(`Array inicial: [${arr}]`);
-console.log(`Total = ${ej.total} del subarray = [${ej.subArray}] `);
-console.log(`---------------------`);
-
-arr = [];
-ej = new maxSequence(arr);
-
-console.log(`Array inicial: [${arr}]`);
-console.log(`Total = ${ej.total} del subarray = [${ej.subArray}] `);
-console.log(`---------------------`);
-
-arr = [-2, -3, -1, -5];
-ej = new maxSequence(arr);
-
-console.log(`Array inicial: [${arr}]`);
-console.log(`Total = ${ej.total} del subarray = [${ej.subArray}] `);
-console.log(`---------------------`);
-
-arr = [1, 4, 5, 7];
-ej = new maxSequence(arr);
-
-console.log(`Array inicial: [${arr}]`);
-console.log(`Total = ${ej.total} del subarray = [${ej.subArray}] `);
-console.log(`---------------------`);
+module.exports = maxSequence;

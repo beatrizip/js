@@ -77,7 +77,7 @@ Tree.prototype.commonAncestor = function (node1, node2) {
     return "Los árboles no valen";
   }
 
-  if (node2.isChild(node1) || node2.isChild(node1)) {
+  if (node2.isChild(node1) || node1.isChild(node2)) {
     return "Son madre e hija";
   }
 
@@ -106,46 +106,4 @@ Tree.prototype.paint = function (level) {
   }
 };
 
-//module.exports = Tree;
-
-let grandma = new Tree("grandma");
-//let mom = new Tree("mom");
-//let ant = new Tree("ant");
-let one = new Tree("1");
-let two = new Tree("2");
-let three = new Tree("3");
-let four = new Tree("4");
-let five = new Tree("5");
-let six = new Tree("6");
-let seven = new Tree("7");
-let eight = new Tree("8");
-let nine = new Tree("9");
-let ten = new Tree("10");
-let eleven = new Tree("11");
-let twelve = new Tree("12");
-let disconected = new Tree("disconected");
-
-grandma.addChild(two);
-two.addChild(three);
-two.addChild(four);
-four.addChild(five);
-five.addChild(six);
-six.addChild(seven);
-six.addChild(eight);
-one.addChild(nine);
-nine.addChild(ten);
-ten.addChild(eleven);
-ten.addChild(twelve);
-two.addChild(one);
-
-let node1 = six;
-let node2 = one;
-
-grandma.paint();
-
-console.log(
-  `Antecesora de "${node1.value}" y "${node2.value}": "${grandma.commonAncestor(
-    node1,
-    node2
-  )}"`
-);
+module.exports = Tree;

@@ -13,7 +13,7 @@
 // diagonalDifference(matrix) -> '-18'
 // (because 7 + 8 + 4 = 19, and 6 + 8 + 23 = 37, hence 19 - 37 = 18).
 
-function diagonalDifference(matrix) {
+export function diagonalDifference(matrix) {
   let lines = matrix.split(/\r\n|\r|\n/);
   let matrixLength = lines.length;
   let columns = [];
@@ -29,11 +29,4 @@ function diagonalDifference(matrix) {
   return Math.abs(main - second); //abs, valor absoluto de un numero
 }
 
-module.exports = diagonalDifference;
-
-let matrix = `7,-12,6
--3,8,1
-23,-16,4`;
-
-console.log(diagonalDifference(matrix));
-//(because 7 + 8 + 4 = 19, and 6 + 8 + 23 = 37, hence 19 - 37 = 18).
+//module.exports = diagonalDifference;

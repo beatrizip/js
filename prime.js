@@ -11,8 +11,8 @@
 // of all prime numbers between that range. If you're not quite sure where to start,
 // check out the Sieve of Eratosthenes, or the Sieve of Atkin on Wikipedia.
 
-function primeTester(n) {
-  if (n < 1) {
+export function primeTester(n) {
+  if (n < 2) {
     return false;
   }
 
@@ -27,34 +27,7 @@ function primeTester(n) {
   return true;
 }
 
-function primeList(start, end) {}
+//function primeList(start, end) {}
 
-exports.tester = primeTester;
-exports.list = primeList;
-
-let number = 5;
-console.log(`${number} - ${primeTester(number)}`);
-
-number = 1;
-console.log(`${number} - ${primeTester(number)}`);
-
-number = 0;
-console.log(`${number} - ${primeTester(number)}`);
-
-number = 2;
-console.log(`${number} - ${primeTester(number)}`);
-
-number = 3;
-console.log(`${number} - ${primeTester(number)}`);
-
-number = -3;
-console.log(`${number} - ${primeTester(number)}`);
-
-number = 14;
-console.log(`${number} - ${primeTester(number)}`);
-
-number = 1458;
-console.log(`${number} - ${primeTester(number)}`);
-
-number = 37;
-console.log(`${number} - ${primeTester(number)}`);
+//exports.tester = primeTester;
+//exports.list = primeList;

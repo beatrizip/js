@@ -7,8 +7,8 @@
 // addMany(3)(4)(1)(7)() -> 15
 // addMany() -> undefined
 
-function addMany(num) {
-  if (num === undefined) return undefined
+export function addMany(num) {
+  if (num === undefined) return undefined;
 
   return function func(x) {
     if (typeof x !== "undefined") {
@@ -19,6 +19,3 @@ function addMany(num) {
     }
   };
 }
-
-console.log(addMany(3)(4)(1)(7)()); //15
-console.log(addMany());

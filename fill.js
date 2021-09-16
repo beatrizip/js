@@ -22,7 +22,7 @@
 //   [2, 9, 7, 8]
 // ]clear
 
-function paintFill(image, point, newColor) {
+export function paintFill(image, point, newColor) {
   let newImage = image;
   let coordX = point[0];
   let coordY = point[1];
@@ -32,7 +32,8 @@ function paintFill(image, point, newColor) {
   let isPoint;
   let pos;
   let adjacents = [];
-  let imageLength = image.length; 
+  let imageLength = image.length;
+  let insideMatrix = false;
 
   image[coordX][coordY] = newColor;
 
@@ -41,7 +42,8 @@ function paintFill(image, point, newColor) {
       adjX = coordX + i;
       adjY = coordY + j;
       isPoint = adjX === coordX && adjY === coordY;
-      insideMatrix = (adjX < imageLength) && (adjY < imageLength) && (adjX >= 0) && (adjY >= 0);
+      insideMatrix =
+        adjX < imageLength && adjY < imageLength && adjX >= 0 && adjY >= 0;
 
       if (insideMatrix && !isPoint) {
         pos = [adjX, adjY];
@@ -50,10 +52,10 @@ function paintFill(image, point, newColor) {
     }
   }
 
-  console.log(`Siguiente posición: ${point}`)
-  console.log(printImage(newImage))
+  //console.log(`Siguiente posición: ${point}`);
+  //console.log(printImage(newImage));
 
-  adjacents.forEach((element) => { 
+  adjacents.forEach((element) => {
     if (image[element[0]][element[1]] === oldColor) {
       paintFill(image, element, newColor);
     }
@@ -62,32 +64,33 @@ function paintFill(image, point, newColor) {
   return newImage;
 }
 
-module.exports = paintFill;
+//module.exports = paintFill;
 
 //---------------------------------
 
 function printImage(image) {
-  image.forEach(line => console.log(line))
-  return ""
+  image.forEach((line) => console.log(line));
+  return "";
 }
 
-
+/*
 const imageTest = [
   [1, 2, 3, 4],
   [5, 2, 4, 3],
   [3, 9, 2, 6],
-  [2, 9, 2, 8]];
-
+  [2, 9, 2, 8],
+];
 
 const newColor = 7;
 const initPos = [2, 2];
+
+
 
 console.log(`VALORES INICIALES`);
 console.log(`Nuevo color: ${newColor}`);
 console.log(`Posición inicial: ${initPos}`);
 console.log(printImage(imageTest));
 
-
 paintFill(imageTest, initPos, newColor);
 
-console.log();
+*/
