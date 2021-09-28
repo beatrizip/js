@@ -1,4 +1,4 @@
-import maxSequence from "./array";
+const maxSequence = require("./array");
 
 test("the sum of max secuence sould be greater than the rest", () => {
   let arr = [-2, 1, 3];

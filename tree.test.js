@@ -1,4 +1,4 @@
-import Tree from "./tree";
+const Tree = require("./tree");
 
 let grandma = new Tree("grandma");
 let one = new Tree("one");

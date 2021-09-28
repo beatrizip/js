@@ -1,4 +1,4 @@
-var paintFill = require("fill");
+var fill = require("./fill");
 
 let image = [
   [1, 2, 3, 4],
@@ -20,5 +20,5 @@ test("color in [2, 2] position (2) soul be replace by 7", () => {
 });
 
 test("color in collindant position soul be replace by 7", () => {
-  expect(paintFill(image, pos, color)).toEqual(output);
+  expect(fill.paintFill(image, pos, color)).toEqual(output);
 });
