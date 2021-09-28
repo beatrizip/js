@@ -10,10 +10,10 @@
 // Number.prototype.add = methodize(add);
 // (3).add(5) -> 8
 
-export function methodize(func) {
+function methodize(func) {
   return function (x) {
     return func(this, x); //this es el contexto de la llamada, el parámetro "a" en este caso
   };
 }
 
-//module.exports = methodize;
+module.exports = { methodize };

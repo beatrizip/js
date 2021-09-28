@@ -22,7 +22,7 @@
 //   [2, 9, 7, 8]
 // ]clear
 
-export function paintFill(image, point, newColor) {
+function paintFill(image, point, newColor) {
   let newImage = image;
   let coordX = point[0];
   let coordY = point[1];
@@ -64,7 +64,7 @@ export function paintFill(image, point, newColor) {
   return newImage;
 }
 
-//module.exports = paintFill;
+module.exports = { paintFill };
 
 //---------------------------------
 

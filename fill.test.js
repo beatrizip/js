@@ -1,4 +1,4 @@
-import { paintFill } from "./fill";
+var paintFill = require("fill");
 
 let image = [
   [1, 2, 3, 4],

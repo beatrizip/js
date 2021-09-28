@@ -7,7 +7,7 @@
 // addMany(3)(4)(1)(7)() -> 15
 // addMany() -> undefined
 
-export function addMany(num) {
+function addMany(num) {
   if (num === undefined) return undefined;
 
   return function func(x) {
@@ -19,3 +19,5 @@ export function addMany(num) {
     }
   };
 }
+
+module.exports = { addMany };

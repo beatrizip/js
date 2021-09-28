@@ -11,7 +11,7 @@
 // of all prime numbers between that range. If you're not quite sure where to start,
 // check out the Sieve of Eratosthenes, or the Sieve of Atkin on Wikipedia.
 
-export function primeTester(n) {
+function primeTester(n) {
   if (n < 2) {
     return false;
   }
@@ -31,3 +31,5 @@ export function primeTester(n) {
 
 //exports.tester = primeTester;
 //exports.list = primeList;
+
+module.exports = { primeTester };

@@ -1,4 +1,4 @@
-import { flatten } from "./flatten.js";
+var flatten = require("./flatten.js");
 
 test("object one nested level to be flatten", () => {
   let input = { foo: { bar: 3 } };
