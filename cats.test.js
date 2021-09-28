@@ -1,9 +1,9 @@
-const getCats = require("./catsAxios");
+const cats = require("./catsAxios");
 const axios = require("axios");
-const HttpMocker = require("@s-ui/mockmock");
+const httpMock = require("@s-ui/mockmock");
 
 // Mock any requests
-const mocker = new HttpMocker();
+const mocker = new httpMock.HttpMocker();
 mocker
   .httpMock("http://fake.api.com")
   .get("/my-service")
@@ -17,9 +17,9 @@ axios
 describe("the cats function", () => {
   //validar url??
   it("sould return an cat url", async () => {
-    let cats = await getCats();
-    console.log(cats);
-    expect(cats).not.toBeNull;
+    let cat = await cats.getCats();
+    console.log(cat);
+    expect(cat).not.toBeNull;
   });
 });
 
