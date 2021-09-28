@@ -1,15 +1,15 @@
-var flatten = require("./flatten.js");
+var flat = require("./flatten");
 
 test("object one nested level to be flatten", () => {
   let input = { foo: { bar: 3 } };
   let output = { "foo.bar": 3 };
-  expect(flatten(input)).toMatchObject(output);
+  expect(flat.flatten(input)).toMatchObject(output);
 });
 
 test("object one level one array nested sould be flatten", () => {
   let input = { foo: [{ bar: 3 }] };
   let output = { "foo.0.bar": 3 };
-  expect(flatten(input)).toMatchObject(output);
+  expect(flat.flatten(input)).toMatchObject(output);
 });
 
 test("object two level and one array nested sould be flatten", () => {
@@ -27,7 +27,7 @@ test("object two level and one array nested sould be flatten", () => {
     "foo.1.yeah": "urg",
   };
 
-  expect(flatten(input)).toMatchObject(output);
+  expect(flat.flatten(input)).toMatchObject(output);
 });
 
 test("object 3 level nested sould be flatten", () => {
@@ -46,7 +46,7 @@ test("object 3 level nested sould be flatten", () => {
     heigth: "1,57",
   };
 
-  expect(flatten(input)).toMatchObject(output);
+  expect(flat.flatten(input)).toMatchObject(output);
 });
 
 test("object 4 level nested sould be flatten", () => {
@@ -69,5 +69,5 @@ test("object 4 level nested sould be flatten", () => {
     heigth: "1,57",
   };
 
-  expect(flatten(input)).toMatchObject(output);
+  expect(flat.flatten(input)).toMatchObject(output);
 });

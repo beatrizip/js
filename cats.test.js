@@ -1,6 +1,6 @@
-import { getCats } from "./catsAxios";
-import axios from "axios";
-import { HttpMocker } from "@s-ui/mockmock";
+const getCats = require("./catsAxios");
+const axios = require("axios");
+const HttpMocker = require("@s-ui/mockmock");
 
 // Mock any requests
 const mocker = new HttpMocker();
