@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 const cats = require("./catsAxios");
 const axios = require("axios");
 const httpMock = require("@s-ui/mockmock");
+=======
+const getCats = require("./catsAxios");
+const axios = require("axios");
+const HttpMocker = require("@s-ui/mockmock");
+>>>>>>> ab7c1585d346d57c1fc6aa39a2df3576a54560ca
 
 // Mock any requests
 const mocker = new httpMock.HttpMocker();
