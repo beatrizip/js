@@ -1,45 +1,24 @@
-<<<<<<< HEAD
 const cats = require("./catsAxios");
 const axios = require("axios");
-const httpMock = require("@s-ui/mockmock");
-=======
-const getCats = require("./catsAxios");
-const axios = require("axios");
-const HttpMocker = require("@s-ui/mockmock");
->>>>>>> ab7c1585d346d57c1fc6aa39a2df3576a54560ca
+const MockAdapter = require("axios-mock-adapter");
+const BASE_URL = "https://catfact.ninja";
 
-// Mock any requests
-const mocker = new httpMock.HttpMocker();
-mocker
-  .httpMock("http://fake.api.com")
-  .get("/my-service")
-  .reply({ property: "value" }, 200);
+describe("cats facts", () => {
+  const mock = new MockAdapter(axios);
 
-// Make your requests
-axios
-  .get("http://fake.api.com/my-service")
-  .then((response) => console.log(response)); // { property: 'value' }
+  describe("when API catfacts is successful", () => {
+    it("should return facts list", async () => {
+      // given
+      const facts = { facts: ["cat 1 bla", "cat 2 ble"] };
+      mock
+        .onGet(`${BASE_URL}/facts`)
+        .reply(200, { facts: ["cat 1 bla", "cat 2 ble"] });
 
-describe("the cats function", () => {
-  //validar url??
-  it("sould return an cat url", async () => {
-    let cat = await cats.getCats();
-    console.log(cat);
-    expect(cat).not.toBeNull;
+      // when
+      const result = await cats.getCatsFacts();
+
+      // then
+      expect(result.data).toEqual(facts);
+    });
   });
 });
-
-//que funcione el api de facts (aparece un texto)
-//que funcione el api de imagenes si ha funcionado el api de facts (aparece una imagen)
-
-/*
-describe("the getStockValue function", () => {
-  it("returns false if no data is returned by the API", async () => {
-    global.fetch = jest.fn(() => {
-      Promise.resolve();
-    });
-    const value = await getCatsFacts();
-    expect(fetch).toHaveBeenCalledTimes(1);
-    expect(value).toBe(false);
-  });
-});*/
