@@ -5,8 +5,8 @@ function getCatsFacts() {
 
   return fetch(url) //fetch devuelve una promesa
     .then((response) => response.json())
-    .then((cats) => {
-      let fact = cats.data[0].fact;
+    .then(({ data: cats }) => {
+      let fact = cats[0].fact;
       let words = fact.split(" ");
       return words.slice(" ", 3).join(" ");
     })

@@ -7,7 +7,7 @@ function getCatsFacts() {
   return axios(url)
     .then(({ data: cats }) => {
       let { data: catFacts } = cats;
-      let fact = catFacts[0];
+      let fact = catFacts[0].fact;
       words = fact.split(" ");
       return words.slice(" ", 3).join(" ");
     })
@@ -47,6 +47,6 @@ function getCats() {
     });
 }
 
-getCats();
+//getCats();
 
 module.exports = { getCatsFacts, getCatsImage, getCats };
